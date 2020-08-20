@@ -58,16 +58,64 @@
 		AF75D0DD24EE592000E0F203 /* Echo-chat */ = {
 			isa = PBXGroup;
 			children = (
-				AF75D0DE24EE592000E0F203 /* AppDelegate.swift */,
-				AF75D0E024EE592000E0F203 /* SceneDelegate.swift */,
-				AF75D0E224EE592000E0F203 /* ViewController.swift */,
-				AF75D0E424EE592000E0F203 /* Main.storyboard */,
+				AF75D0F924EE5B5F00E0F203 /* Managers */,
+				AF75D0F824EE5B4300E0F203 /* Storyboards */,
+				AF75D0F724EE5B3900E0F203 /* View Controllers */,
+				AF75D0F624EE5B3200E0F203 /* View Models */,
+				AF75D0F524EE5B1900E0F203 /* Models */,
+				AF75D0FA24EE5C5500E0F203 /* App Delegates */,
 				AF75D0EA24EE592100E0F203 /* Assets.xcassets */,
-				AF75D0EC24EE592100E0F203 /* LaunchScreen.storyboard */,
 				AF75D0EF24EE592100E0F203 /* Info.plist */,
 				AF75D0E724EE592000E0F203 /* Echo_chat.xcdatamodeld */,
 			);
 			path = "Echo-chat";
+			sourceTree = "<group>";
+		};
+		AF75D0F524EE5B1900E0F203 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AF75D0F624EE5B3200E0F203 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		AF75D0F724EE5B3900E0F203 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF75D0E224EE592000E0F203 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AF75D0F824EE5B4300E0F203 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AF75D0EC24EE592100E0F203 /* LaunchScreen.storyboard */,
+				AF75D0E424EE592000E0F203 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AF75D0F924EE5B5F00E0F203 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		AF75D0FA24EE5C5500E0F203 /* App Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				AF75D0E024EE592000E0F203 /* SceneDelegate.swift */,
+				AF75D0DE24EE592000E0F203 /* AppDelegate.swift */,
+			);
+			path = "App Delegates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
