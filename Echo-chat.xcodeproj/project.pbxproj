@@ -20,6 +20,7 @@
 		AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10924EE9C1F00E0F203 /* AppColors.swift */; };
 		AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10B24EE9E8900E0F203 /* AppFonts.swift */; };
 		AF75D10E24EE9EF300E0F203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10D24EE9EF300E0F203 /* Constants.swift */; };
+		AF75D11124EEA0B800E0F203 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D11024EEA0B800E0F203 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AF75D10924EE9C1F00E0F203 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		AF75D10B24EE9E8900E0F203 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		AF75D10D24EE9EF300E0F203 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF75D11024EEA0B800E0F203 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		AF75D0DD24EE592000E0F203 /* Echo-chat */ = {
 			isa = PBXGroup;
 			children = (
+				AF75D10F24EEA08600E0F203 /* Extensions */,
 				AF75D0FD24EE776300E0F203 /* Views */,
 				AF75D0F924EE5B5F00E0F203 /* Managers */,
 				AF75D0F824EE5B4300E0F203 /* Storyboards */,
@@ -103,6 +106,7 @@
 		AF75D0F724EE5B3900E0F203 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF75D11224EEA31800E0F203 /* Base */,
 				AF75D0FB24EE6A0000E0F203 /* FriendsTableViewController.swift */,
 			);
 			path = "View Controllers";
@@ -158,6 +162,21 @@
 				AF75D10D24EE9EF300E0F203 /* Constants.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF75D10F24EEA08600E0F203 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF75D11224EEA31800E0F203 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AF75D11024EEA0B800E0F203 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +255,7 @@
 				AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */,
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
 				AF75D0FC24EE6A0000E0F203 /* FriendsTableViewController.swift in Sources */,
+				AF75D11124EEA0B800E0F203 /* BaseViewController.swift in Sources */,
 				AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */,
 				AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */,
 				AF75D10524EE9B0D00E0F203 /* FriendsListViewModel.swift in Sources */,
