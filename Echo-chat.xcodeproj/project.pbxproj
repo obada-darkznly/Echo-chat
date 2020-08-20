@@ -17,6 +17,9 @@
 		AF75D10024EE778400E0F203 /* FriendsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0FF24EE778400E0F203 /* FriendsListCell.swift */; };
 		AF75D10224EE98EC00E0F203 /* FriendsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */; };
 		AF75D10524EE9B0D00E0F203 /* FriendsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10424EE9B0D00E0F203 /* FriendsListViewModel.swift */; };
+		AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10924EE9C1F00E0F203 /* AppColors.swift */; };
+		AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10B24EE9E8900E0F203 /* AppFonts.swift */; };
+		AF75D10E24EE9EF300E0F203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10D24EE9EF300E0F203 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		AF75D0FF24EE778400E0F203 /* FriendsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCell.swift; sourceTree = "<group>"; };
 		AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListCell.xib; sourceTree = "<group>"; };
 		AF75D10424EE9B0D00E0F203 /* FriendsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewModel.swift; sourceTree = "<group>"; };
+		AF75D10924EE9C1F00E0F203 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		AF75D10B24EE9E8900E0F203 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		AF75D10D24EE9EF300E0F203 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 				AF75D0F624EE5B3200E0F203 /* View Models */,
 				AF75D0F524EE5B1900E0F203 /* Models */,
 				AF75D0FA24EE5C5500E0F203 /* App Delegates */,
+				AF75D10824EE9C0600E0F203 /* Resources */,
 				AF75D0EA24EE592100E0F203 /* Assets.xcassets */,
 				AF75D0EF24EE592100E0F203 /* Info.plist */,
 				AF75D0E724EE592000E0F203 /* Echo_chat.xcdatamodeld */,
@@ -141,6 +148,16 @@
 				AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */,
 			);
 			path = XIBs;
+			sourceTree = "<group>";
+		};
+		AF75D10824EE9C0600E0F203 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF75D10924EE9C1F00E0F203 /* AppColors.swift */,
+				AF75D10B24EE9E8900E0F203 /* AppFonts.swift */,
+				AF75D10D24EE9EF300E0F203 /* Constants.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +236,11 @@
 				AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */,
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
 				AF75D0FC24EE6A0000E0F203 /* FriendsTableViewController.swift in Sources */,
+				AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */,
+				AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */,
 				AF75D10524EE9B0D00E0F203 /* FriendsListViewModel.swift in Sources */,
 				AF75D0E124EE592000E0F203 /* SceneDelegate.swift in Sources */,
+				AF75D10E24EE9EF300E0F203 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
