@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0DE24EE592000E0F203 /* AppDelegate.swift */; };
 		AF75D0E124EE592000E0F203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0E024EE592000E0F203 /* SceneDelegate.swift */; };
-		AF75D0E324EE592000E0F203 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0E224EE592000E0F203 /* ViewController.swift */; };
 		AF75D0E624EE592000E0F203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0E424EE592000E0F203 /* Main.storyboard */; };
 		AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0E724EE592000E0F203 /* Echo_chat.xcdatamodeld */; };
 		AF75D0EB24EE592100E0F203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0EA24EE592100E0F203 /* Assets.xcassets */; };
 		AF75D0EE24EE592100E0F203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0EC24EE592100E0F203 /* LaunchScreen.storyboard */; };
+		AF75D0FC24EE6A0000E0F203 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0FB24EE6A0000E0F203 /* FriendsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF75D0DB24EE592000E0F203 /* Echo-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Echo-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF75D0DE24EE592000E0F203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF75D0E024EE592000E0F203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF75D0E224EE592000E0F203 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF75D0E524EE592000E0F203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF75D0E824EE592000E0F203 /* Echo_chat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Echo_chat.xcdatamodel; sourceTree = "<group>"; };
 		AF75D0EA24EE592100E0F203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF75D0ED24EE592100E0F203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF75D0EF24EE592100E0F203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF75D0FB24EE6A0000E0F203 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 		AF75D0F724EE5B3900E0F203 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AF75D0E224EE592000E0F203 /* ViewController.swift */,
+				AF75D0FB24EE6A0000E0F203 /* FriendsTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */,
-				AF75D0E324EE592000E0F203 /* ViewController.swift in Sources */,
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
+				AF75D0FC24EE6A0000E0F203 /* FriendsTableViewController.swift in Sources */,
 				AF75D0E124EE592000E0F203 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
