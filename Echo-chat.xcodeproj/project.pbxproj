@@ -16,6 +16,7 @@
 		AF75D0FC24EE6A0000E0F203 /* FriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0FB24EE6A0000E0F203 /* FriendsTableViewController.swift */; };
 		AF75D10024EE778400E0F203 /* FriendsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0FF24EE778400E0F203 /* FriendsListCell.swift */; };
 		AF75D10224EE98EC00E0F203 /* FriendsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */; };
+		AF75D10524EE9B0D00E0F203 /* FriendsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10424EE9B0D00E0F203 /* FriendsListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AF75D0FB24EE6A0000E0F203 /* FriendsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewController.swift; sourceTree = "<group>"; };
 		AF75D0FF24EE778400E0F203 /* FriendsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCell.swift; sourceTree = "<group>"; };
 		AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListCell.xib; sourceTree = "<group>"; };
+		AF75D10424EE9B0D00E0F203 /* FriendsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		AF75D0F624EE5B3200E0F203 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				AF75D10424EE9B0D00E0F203 /* FriendsListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */,
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
 				AF75D0FC24EE6A0000E0F203 /* FriendsTableViewController.swift in Sources */,
+				AF75D10524EE9B0D00E0F203 /* FriendsListViewModel.swift in Sources */,
 				AF75D0E124EE592000E0F203 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
