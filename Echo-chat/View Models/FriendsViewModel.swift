@@ -12,6 +12,6 @@ import Foundation
 struct FriendsViewModel {
     
     // MARK: Properties
-    
+    let firendsCellId = ""
     // MARK: Methods
 }
