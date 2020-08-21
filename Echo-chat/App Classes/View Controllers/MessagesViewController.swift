@@ -53,8 +53,23 @@ class MessagesViewController: BaseViewController {
     }
 }
 
+// MARK:- Table view delegate
 extension MessagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        messagesViewModel.selectedFriend = messagesViewModel.messages[indexPath.row].friend ?? Friend()
+        performSegue(withIdentifier: messagesViewModel.friendChatSegue, sender: nil)
+    }
+}
+
+// MARK:- Navigation and segue
+extension MessagesViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let chatVC = segue.destination as? ChatViewController {
+            chatVC.chatViewModel = ChatViewModel(withFriend: messagesViewModel.selectedFriend)
+        }
     }
 }

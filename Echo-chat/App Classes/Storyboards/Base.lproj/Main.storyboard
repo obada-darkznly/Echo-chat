@@ -32,7 +32,7 @@
                     <navigationItem key="navigationItem" id="npE-qs-A1l"/>
                     <connections>
                         <outlet property="tableView" destination="ykc-br-mKS" id="UVS-YA-uuf"/>
-                        <segue destination="bZv-gN-1kg" kind="show" id="Adr-gi-s6Q"/>
+                        <segue destination="bZv-gN-1kg" kind="show" identifier="friendChatSegue" id="Adr-gi-s6Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="st8-xd-3ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -47,13 +47,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qlm-oN-4fX">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello there..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LKd-84-rXv">
-                                <rect key="frame" x="16" y="822" width="330" height="40"/>
+                                <rect key="frame" x="16" y="806" width="330" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Q3p-Ix-pWJ"/>
@@ -63,14 +58,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idH-jN-6cG">
-                                <rect key="frame" x="362" y="832" width="36" height="30"/>
+                                <rect key="frame" x="362" y="816" width="36" height="30"/>
                                 <state key="normal" title="Send"/>
                                 <connections>
                                     <action selector="sendPressed:" destination="bZv-gN-1kg" eventType="touchUpInside" id="kDg-0z-ubY"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mqI-Zv-ouO">
-                                <rect key="frame" x="0.0" y="88" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="702"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
@@ -80,10 +75,10 @@
                             <constraint firstItem="SXs-10-V00" firstAttribute="trailing" secondItem="idH-jN-6cG" secondAttribute="trailing" constant="16" id="IHs-A9-mOp"/>
                             <constraint firstItem="LKd-84-rXv" firstAttribute="top" secondItem="mqI-Zv-ouO" secondAttribute="bottom" constant="16" id="Lyz-Bz-jCA"/>
                             <constraint firstItem="idH-jN-6cG" firstAttribute="leading" secondItem="LKd-84-rXv" secondAttribute="trailing" constant="16" id="N9t-iy-apg"/>
-                            <constraint firstItem="idH-jN-6cG" firstAttribute="bottom" secondItem="SXs-10-V00" secondAttribute="bottom" id="Qoh-Tq-g0z"/>
+                            <constraint firstItem="SXs-10-V00" firstAttribute="bottom" secondItem="LKd-84-rXv" secondAttribute="bottom" constant="16" id="O9s-qJ-2pV"/>
                             <constraint firstItem="mqI-Zv-ouO" firstAttribute="leading" secondItem="SXs-10-V00" secondAttribute="leading" id="d0V-Kr-Alr"/>
                             <constraint firstItem="mqI-Zv-ouO" firstAttribute="top" secondItem="SXs-10-V00" secondAttribute="top" id="gPd-GA-MXM"/>
-                            <constraint firstItem="LKd-84-rXv" firstAttribute="bottom" secondItem="SXs-10-V00" secondAttribute="bottom" id="hIT-pF-JCk"/>
+                            <constraint firstItem="SXs-10-V00" firstAttribute="bottom" secondItem="idH-jN-6cG" secondAttribute="bottom" constant="16" id="jWM-Eh-2LR"/>
                             <constraint firstItem="LKd-84-rXv" firstAttribute="leading" secondItem="SXs-10-V00" secondAttribute="leading" constant="16" id="zsZ-ki-Rye"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SXs-10-V00"/>
