@@ -9,6 +9,5 @@
 #ifndef Echo_chat_Bridging_Header_h
 #define Echo_chat_Bridging_Header_h
 
-#import <UIScrollView_InfiniteScroll/UIScrollView+InfiniteScroll.h>
 
 #endif /* Echo_chat_Bridging_Header_h */
