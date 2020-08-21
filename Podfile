@@ -9,5 +9,6 @@ target 'Echo-chat' do
   
   pod 'Fakery'
   pod 'UIScrollView-InfiniteScroll', '~> 1.1.0'
+  pod 'PINRemoteImage'
 
 end

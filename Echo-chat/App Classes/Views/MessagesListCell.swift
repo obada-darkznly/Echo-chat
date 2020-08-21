@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PINRemoteImage
 
 
 class MessagesListCell: UITableViewCell {
@@ -51,12 +52,7 @@ class MessagesListCell: UITableViewCell {
         }
         if let imageString = message.friend?.profileImageString {
             let imageUrl = URL(string: imageString)!
-            do {
-                let imageData = try Data(contentsOf: imageUrl)
-                profileImageView.image = UIImage(data: imageData)
-            } catch {
-                print("Couldn't load the image")
-            }
+            profileImageView.pin_setImage(from: imageUrl)
         }
     }
 }

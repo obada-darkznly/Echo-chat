@@ -50,7 +50,7 @@ class DataStore: NSObject {
         // toggle to handle both cases of having messages or not
         var hasMessage: Bool = true
         if let managedContext = delegate?.persistentContainer.viewContext {
-            for i in 0 ... 199 {
+            for i in 0 ... 15 {
                 if let friend = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: managedContext) as? Friend  {
                     friend.name = "\(faker.name.firstName()) \(faker.name.lastName())"
                     // Get random image from Lorem Picsum website

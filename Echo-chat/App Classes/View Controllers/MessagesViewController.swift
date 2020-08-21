@@ -30,9 +30,9 @@ class MessagesViewController: BaseViewController {
         customizeView()
         
         // Refresh the messages
-        messagesViewModel.refreshMessages { (messages) in
-            if let messages = messages {
-                self.dataSource = MessagesDataSource(withMessages: messages)
+        messagesViewModel.refreshMessages { (success) in
+            if success {
+                self.dataSource = MessagesDataSource(withMessages: self.messagesViewModel.messages)
             } else {
                 print("Error in fetching messages from data source")
             }

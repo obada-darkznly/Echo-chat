@@ -13,17 +13,23 @@ class MessagesViewModel {
     
     // MARK: Properties
     let firendsCellId = "messagesListCell"
+    var messages: [Message] = []
     
     
     // MARK: Methods
     
     /// Fetches the messages from the data store
-    func refreshMessages(completion: @escaping(_ messages: [Message]?) -> Void) {
+    func refreshMessages(completion: @escaping(_ success: Bool) -> Void) {
+        if messages.count == 200 {
+            completion(false)
+            return
+        }
         DataStore.shared.loadMessages { (messages) in
             if let messages = messages {
-                completion(messages)
+                self.messages += messages
+                completion(true)
             } else {
-                completion(nil)
+                completion(false)
             }
         }
     }
