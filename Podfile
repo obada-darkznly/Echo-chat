@@ -8,5 +8,6 @@ target 'Echo-chat' do
   # Pods for Echo-chat
   
   pod 'Fakery'
+  pod 'UIScrollView-InfiniteScroll', '~> 1.1.0'
 
 end
