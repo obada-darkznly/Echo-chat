@@ -46,7 +46,8 @@ class MessagesListCell: UITableViewCell {
         messageLabel.text = message.text ?? ""
         
         let formatter = DateFormatter()
-        formatter.dateStyle = .short
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
         if let date = message.date {
             dateLabel.text = formatter.string(from: date)
         }
