@@ -27,6 +27,7 @@
 		AF75D12324EFBAF400E0F203 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D11F24EFBAF400E0F203 /* Friend+CoreDataClass.swift */; };
 		AF75D12424EFBAF400E0F203 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D12024EFBAF400E0F203 /* Friend+CoreDataProperties.swift */; };
 		AFE8655824EFDD3200EE97AD /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655724EFDD3200EE97AD /* DataStore.swift */; };
+		AFE8655B24EFFC8000EE97AD /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		AF75D11F24EFBAF400E0F203 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AF75D12024EFBAF400E0F203 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AFE8655724EFDD3200EE97AD /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		AF75D0F624EE5B3200E0F203 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				AFE8655924EFFC6800EE97AD /* TableViewDataSources */,
 				AF75D10424EE9B0D00E0F203 /* MessagesViewModel.swift */,
 			);
 			path = "View Models";
@@ -207,6 +210,14 @@
 				AF75D0F824EE5B4300E0F203 /* Storyboards */,
 			);
 			path = "App Classes";
+			sourceTree = "<group>";
+		};
+		AFE8655924EFFC6800EE97AD /* TableViewDataSources */ = {
+			isa = PBXGroup;
+			children = (
+				AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */,
+			);
+			path = TableViewDataSources;
 			sourceTree = "<group>";
 		};
 		C217A4DC6D72BFEC17E09BF0 /* Pods */ = {
@@ -348,6 +359,7 @@
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
 				AF75D11124EEA0B800E0F203 /* BaseViewController.swift in Sources */,
 				AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */,
+				AFE8655B24EFFC8000EE97AD /* MessagesDataSource.swift in Sources */,
 				AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */,
 				AF75D11424EEC4DA00E0F203 /* MessagesViewController.swift in Sources */,
 				AF75D10524EE9B0D00E0F203 /* MessagesViewModel.swift in Sources */,
