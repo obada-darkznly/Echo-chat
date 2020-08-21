@@ -26,6 +26,16 @@ class FriendsListCell: UITableViewCell {
     // MARK: Cell's customization
     func customizeView() {
         
+        nameLabel.font = AppFonts.normal
+        nameLabel.textColor = AppColors.black
+        
+        messageLabel.font = AppFonts.small
+        messageLabel.textColor = AppColors.gray
+        
+        dateLabel.font = AppFonts.small
+        dateLabel.textColor = AppColors.gray
+        
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
     }
     
     // MARK: Cell's population
