@@ -67,6 +67,10 @@ class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.standardAppearance = apperence
         self.navigationController?.navigationBar.scrollEdgeAppearance = apperence
         self.navigationController?.navigationBar.isTranslucent = true
+        
+        if let leftButton = navigationItem.leftBarButtonItem {
+            leftButton.tintColor = .white
+        }
 
     }
     
