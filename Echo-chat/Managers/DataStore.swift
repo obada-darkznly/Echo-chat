@@ -49,7 +49,7 @@ class DataStore: NSObject {
         
         // toggle to handle both cases of having messages or not
         if let managedContext = delegate?.persistentContainer.viewContext {
-            for i in 0 ... 200 {
+            for i in 0 ... 199 {
                 if let friend = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: managedContext) as? Friend  {
                     friend.name = "\(faker.name.firstName()) \(faker.name.lastName())"
                     // Get random image from Lorem Picsum website
@@ -70,17 +70,41 @@ class DataStore: NSObject {
         }
     }
     
-    // Fetches the data from core data
-    func loadMessages(completion: @escaping(_ messages: [Message]?) -> Void) {
-        // setup the data before fetching it
-        setupData()
+    /// Fetches all the friends objects in Core data
+    private func fetchFriends() -> [Friend]? {
         if let managedContext = delegate?.persistentContainer.viewContext {
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Message")
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Friend")
             do {
-                completion(try managedContext.fetch(fetchRequest) as? [Message])
-            } catch let error as NSError{
-                print("Could not fetch. \(error), \(error.userInfo)")
+                return try managedContext.fetch(fetchRequest) as? [Friend]
+            } catch {
+                
             }
+        }
+        return nil
+    }
+    
+    // Fetches the messages the from core data
+    func loadMessages(completion: @escaping(_ messages: [Message]?) -> Void) {
+        // setup the data before filtering and returning it
+        setupData()
+        var messages = [Message]()
+        if let managedContext = delegate?.persistentContainer.viewContext {
+            if let friends = fetchFriends() {
+                for friend in friends {
+                    let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Message")
+                    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
+                    fetchRequest.predicate = NSPredicate(format: "friend.name = %@", friend.name!)
+                    fetchRequest.fetchLimit = 1
+                    do {
+                        let fetchedMessages = try managedContext.fetch(fetchRequest) as? [Message]
+                        messages.append(contentsOf: fetchedMessages!)
+                    } catch let error as NSError{
+                        print("Could not fetch. \(error), \(error.userInfo)")
+                    }
+                }
+            }
+            messages.sort(by: {$0.date?.compare($1.date!) == .orderedDescending})
+            completion(messages)
         }
         completion(nil)
     }
