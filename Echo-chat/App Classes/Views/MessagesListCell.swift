@@ -36,10 +36,27 @@ class MessagesListCell: UITableViewCell {
         dateLabel.textColor = AppColors.gray
         
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        profileImageView.backgroundColor = AppColors.grayLight
     }
     
     // MARK: Cell's population
-    func populate() {
+    func populate(withMessage message: Message) {
+        nameLabel.text = message.friend?.name
+        messageLabel.text = message.text ?? ""
         
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        if let date = message.date {
+            dateLabel.text = formatter.string(from: date)
+        }
+        if let imageString = message.friend?.profileImageString {
+            let imageUrl = URL(string: imageString)!
+            do {
+                let imageData = try Data(contentsOf: imageUrl)
+                profileImageView.image = UIImage(data: imageData)
+            } catch {
+                print("Couldn't load the image")
+            }
+        }
     }
 }
