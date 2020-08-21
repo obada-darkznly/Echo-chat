@@ -26,6 +26,7 @@
 		AF75D12224EFBAF400E0F203 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D11E24EFBAF400E0F203 /* Message+CoreDataProperties.swift */; };
 		AF75D12324EFBAF400E0F203 /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D11F24EFBAF400E0F203 /* Friend+CoreDataClass.swift */; };
 		AF75D12424EFBAF400E0F203 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D12024EFBAF400E0F203 /* Friend+CoreDataProperties.swift */; };
+		AFD321B924F074D400B272B6 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD321B824F074D400B272B6 /* ChatViewModel.swift */; };
 		AFE8655824EFDD3200EE97AD /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655724EFDD3200EE97AD /* DataStore.swift */; };
 		AFE8655B24EFFC8000EE97AD /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		AF75D11F24EFBAF400E0F203 /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AF75D12024EFBAF400E0F203 /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friend+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AF89A83524F03E3A00B438F2 /* Echo-chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Echo-chat-Bridging-Header.h"; sourceTree = "<group>"; };
+		AFD321B824F074D400B272B6 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		AFE8655724EFDD3200EE97AD /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +122,7 @@
 			children = (
 				AFE8655924EFFC6800EE97AD /* TableViewDataSources */,
 				AF75D10424EE9B0D00E0F203 /* MessagesViewModel.swift */,
+				AFD321B824F074D400B272B6 /* ChatViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
 				AF75D11124EEA0B800E0F203 /* BaseViewController.swift in Sources */,
 				AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */,
+				AFD321B924F074D400B272B6 /* ChatViewModel.swift in Sources */,
 				AFE8655B24EFFC8000EE97AD /* MessagesDataSource.swift in Sources */,
 				AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */,
 				AF75D11424EEC4DA00E0F203 /* MessagesViewController.swift in Sources */,
