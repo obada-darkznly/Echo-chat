@@ -12,6 +12,6 @@ import Foundation
 struct MessagesViewModel {
     
     // MARK: Properties
-    let firendsCellId = ""
+    let firendsCellId = "MessagesListCell"
     // MARK: Methods
 }

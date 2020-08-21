@@ -9,7 +9,7 @@
 import UIKit
 
 
-class FriendsListCell: UITableViewCell {
+class MessagesListCell: UITableViewCell {
     
     // MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!

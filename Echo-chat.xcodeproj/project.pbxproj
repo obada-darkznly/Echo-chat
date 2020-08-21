@@ -14,8 +14,8 @@
 		AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0E724EE592000E0F203 /* Echo_chat.xcdatamodeld */; };
 		AF75D0EB24EE592100E0F203 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0EA24EE592100E0F203 /* Assets.xcassets */; };
 		AF75D0EE24EE592100E0F203 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0EC24EE592100E0F203 /* LaunchScreen.storyboard */; };
-		AF75D10024EE778400E0F203 /* FriendsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0FF24EE778400E0F203 /* FriendsListCell.swift */; };
-		AF75D10224EE98EC00E0F203 /* FriendsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */; };
+		AF75D10024EE778400E0F203 /* MessagesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0FF24EE778400E0F203 /* MessagesListCell.swift */; };
+		AF75D10224EE98EC00E0F203 /* MessagesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF75D10124EE98EC00E0F203 /* MessagesListCell.xib */; };
 		AF75D10524EE9B0D00E0F203 /* MessagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10424EE9B0D00E0F203 /* MessagesViewModel.swift */; };
 		AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10924EE9C1F00E0F203 /* AppColors.swift */; };
 		AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D10B24EE9E8900E0F203 /* AppFonts.swift */; };
@@ -41,8 +41,8 @@
 		AF75D0EA24EE592100E0F203 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF75D0ED24EE592100E0F203 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF75D0EF24EE592100E0F203 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF75D0FF24EE778400E0F203 /* FriendsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListCell.swift; sourceTree = "<group>"; };
-		AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsListCell.xib; sourceTree = "<group>"; };
+		AF75D0FF24EE778400E0F203 /* MessagesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesListCell.swift; sourceTree = "<group>"; };
+		AF75D10124EE98EC00E0F203 /* MessagesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessagesListCell.xib; sourceTree = "<group>"; };
 		AF75D10424EE9B0D00E0F203 /* MessagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewModel.swift; sourceTree = "<group>"; };
 		AF75D10924EE9C1F00E0F203 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		AF75D10B24EE9E8900E0F203 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				AF75D0FE24EE776B00E0F203 /* XIBs */,
-				AF75D0FF24EE778400E0F203 /* FriendsListCell.swift */,
+				AF75D0FF24EE778400E0F203 /* MessagesListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 		AF75D0FE24EE776B00E0F203 /* XIBs */ = {
 			isa = PBXGroup;
 			children = (
-				AF75D10124EE98EC00E0F203 /* FriendsListCell.xib */,
+				AF75D10124EE98EC00E0F203 /* MessagesListCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 				AF75D0EE24EE592100E0F203 /* LaunchScreen.storyboard in Resources */,
 				AF75D0EB24EE592100E0F203 /* Assets.xcassets in Resources */,
 				AF75D0E624EE592000E0F203 /* Main.storyboard in Resources */,
-				AF75D10224EE98EC00E0F203 /* FriendsListCell.xib in Resources */,
+				AF75D10224EE98EC00E0F203 /* MessagesListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF75D10024EE778400E0F203 /* FriendsListCell.swift in Sources */,
+				AF75D10024EE778400E0F203 /* MessagesListCell.swift in Sources */,
 				AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */,
 				AF75D12224EFBAF400E0F203 /* Message+CoreDataProperties.swift in Sources */,
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
