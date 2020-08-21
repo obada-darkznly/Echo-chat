@@ -17,6 +17,61 @@ class BaseViewController: UIViewController {
     var keyboardWillHideSubscriber: AnyCancellable?
     var keyboardBottomMultiplier: CGFloat = 1
     
+    // MARK:- Controller's life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        customizeView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setNavBarTheme()
+    }
+    
+    // MARK:- Controller's customization
+    
+    func customizeView(_ title: String = "") {
+        setNavBarTitle(title: title, color: .white)
+        self.view.backgroundColor = AppColors.white
+    }
+    
+    // MARK: Navigation bar customization
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    /// Sets the title of the navigation bar
+    private func setNavBarTitle(title: String, color: UIColor) {
+        let titleViewFrame = CGRect(x: 80, y: 0, width: ScreenSize.width - 160, height: 44)
+        let titleLabelFrame = CGRect(x: 0, y: 0, width: titleViewFrame.width, height: titleViewFrame.height)
+        let titleView = UIView(frame: titleViewFrame)
+        let titleLabel = UILabel(frame: titleLabelFrame)
+        titleLabel.text = title
+        titleLabel.textAlignment = .center
+        titleLabel.font = AppFonts.xBig
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.textColor = color
+        titleView.addSubview(titleLabel)
+        self.navigationItem.titleView = titleView
+    }
+    
+    func setNavBarTheme() {
+        let apperence = UINavigationBarAppearance()
+        apperence.configureWithTransparentBackground()
+        apperence.backgroundColor = AppColors.purple
+        apperence.titleTextAttributes = [.foregroundColor: UIColor.white, .font: AppFonts.xBig]
+        apperence.largeTitleTextAttributes = [.foregroundColor: UIColor.white, .font: AppFonts.xBig]
+        
+        self.navigationController?.navigationBar.standardAppearance = apperence
+        self.navigationController?.navigationBar.scrollEdgeAppearance = apperence
+        self.navigationController?.navigationBar.isTranslucent = true
+
+    }
+    
+    // MARK:- Handeling keyboard events
+    
     /// Ajdust UIView or UIScrollView with Keybaord events
     /// - Parameters:
     /// - subscriberView: You can pass UIView or UIScrollView

@@ -57,6 +57,7 @@
                     <constraint firstAttribute="trailing" secondItem="ocu-cv-3qB" secondAttribute="trailing" constant="16" id="mng-Nf-beW"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="dateLabel" destination="faL-CB-dXz" id="icT-wO-VYh"/>
                 <outlet property="messageLabel" destination="ocu-cv-3qB" id="LhI-K3-zcA"/>

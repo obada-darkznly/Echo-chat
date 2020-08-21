@@ -26,9 +26,7 @@ class MessagesViewController: BaseViewController {
     // MARK: Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        customizeView()
-        
+
         // Refresh the messages
         messagesViewModel.refreshMessages { (success) in
             if success {
@@ -44,8 +42,8 @@ class MessagesViewController: BaseViewController {
     }
     
     // MARK: Controller's customization
-    func customizeView() {
-        
+    override func customizeView(_ title: String = "") {
+        super.customizeView("Chats")
         tableView.delegate = self
         
         // Registering the cell with the table view
