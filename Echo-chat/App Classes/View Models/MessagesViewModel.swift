@@ -9,9 +9,22 @@
 import Foundation
 
 
-struct MessagesViewModel {
+class MessagesViewModel {
     
     // MARK: Properties
     let firendsCellId = "messagesListCell"
+    
+    
     // MARK: Methods
+    
+    /// Fetches the messages from the data store
+    func refreshMessages(completion: @escaping(_ messages: [Message]?) -> Void) {
+        DataStore.shared.loadMessages { (messages) in
+            if let messages = messages {
+                completion(messages)
+            } else {
+                completion(nil)
+            }
+        }
+    }
 }

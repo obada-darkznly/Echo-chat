@@ -54,7 +54,7 @@ class DataStore: NSObject {
                 if let friend = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: managedContext) as? Friend  {
                     friend.name = "\(faker.name.firstName()) \(faker.name.lastName())"
                     // Get random image from Lorem Picsum website
-                    friend.profileImageString = "https://picsum.photos/200/?random=\(i)"
+                    friend.profileImageString = "https://picsum.photos/50/?random=\(i)"
                     if hasMessage {
                         if let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedContext) as? Message  {
                             message.text = faker.lorem.characters(amount: 50)

@@ -15,12 +15,28 @@ class MessagesViewController: BaseViewController {
     
     // MARK: Properties
     var messagesViewModel = MessagesViewModel()
+    
+    var dataSource: UITableViewDataSource? {
+        didSet {
+            self.tableView.dataSource = dataSource
+            self.tableView.reloadData()
+        }
+    }
 
     // MARK: Controller's life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         customizeView()
+        
+        // Refresh the messages
+        messagesViewModel.refreshMessages { (messages) in
+            if let messages = messages {
+                self.dataSource = MessagesDataSource(withMessages: messages)
+            } else {
+                print("Error in fetching messages from data source")
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,12 +49,14 @@ class MessagesViewController: BaseViewController {
         tableView.delegate = self
         
         // Registering the cell with the table view
-        let cellNib = UINib(nibName: "FriendsListCell", bundle: nil)
+        let cellNib = UINib(nibName: "MessagesListCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: messagesViewModel.firendsCellId)
         
     }
 }
 
 extension MessagesViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
 }
