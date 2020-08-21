@@ -17,7 +17,6 @@ class DataStore: NSObject {
     public static var shared: DataStore = DataStore()
     
     private let delegate = UIApplication.shared.delegate as? AppDelegate
-    
     // Fake data generator instance
     private let faker = Faker()
     
@@ -44,7 +43,7 @@ class DataStore: NSObject {
     }
     
     /// Creates an array of friends to be stored in core data
-    func setupData() {
+    private func setupData() {
         // Clear old data before creating new data
         clearData()
         
@@ -76,15 +75,17 @@ class DataStore: NSObject {
     }
     
     // Fetches the data from core data
-    func loadMessages() -> [Message]? {
+    func loadMessages(completion: @escaping(_ messages: [Message]?) -> Void) {
+        // setup the data before fetching it
+        setupData()
         if let managedContext = delegate?.persistentContainer.viewContext {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Message")
             do {
-                return try managedContext.fetch(fetchRequest) as? [Message]
+                completion(try managedContext.fetch(fetchRequest) as? [Message])
             } catch let error as NSError{
                 print("Could not fetch. \(error), \(error.userInfo)")
             }
         }
-        return nil
+        completion(nil)
     }
 }
