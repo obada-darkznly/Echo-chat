@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FriendsViewController: BaseViewController {
+class MessagesViewController: BaseViewController {
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Properties
-    var friendsViewModel = FriendsViewModel()
+    var messagesViewModel = MessagesViewModel()
 
     // MARK: Controller's life cycle
     override func viewDidLoad() {
@@ -34,11 +34,11 @@ class FriendsViewController: BaseViewController {
         
         // Registering the cell with the table view
         let cellNib = UINib(nibName: "FriendsListCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: friendsViewModel.firendsCellId)
+        tableView.register(cellNib, forCellReuseIdentifier: messagesViewModel.firendsCellId)
         
     }
 }
 
-extension FriendsViewController: UITableViewDelegate {
+extension MessagesViewController: UITableViewDelegate {
     
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct FriendsViewModel {
+struct MessagesViewModel {
     
     // MARK: Properties
     let firendsCellId = ""

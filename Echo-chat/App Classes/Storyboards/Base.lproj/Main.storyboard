@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Friends View Controller-->
+        <!--Messages View Controller-->
         <scene sceneID="fXN-v4-7Wx">
             <objects>
-                <viewController id="z0G-Zz-Frs" customClass="FriendsViewController" customModule="Echo_chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z0G-Zz-Frs" customClass="MessagesViewController" customModule="Echo_chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kJV-DQ-Ao1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -41,7 +41,7 @@
         <!--Navigation Controller-->
         <scene sceneID="iRR-xb-Tsb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PsP-gF-Lwy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MessagesNav" automaticallyAdjustsScrollViewInsets="NO" id="PsP-gF-Lwy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="u9S-6P-FvG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
