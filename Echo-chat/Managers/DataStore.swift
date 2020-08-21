@@ -48,21 +48,17 @@ class DataStore: NSObject {
         clearData()
         
         // toggle to handle both cases of having messages or not
-        var hasMessage: Bool = true
         if let managedContext = delegate?.persistentContainer.viewContext {
-            for i in 0 ... 15 {
+            for i in 0 ... 200 {
                 if let friend = NSEntityDescription.insertNewObject(forEntityName: "Friend", into: managedContext) as? Friend  {
                     friend.name = "\(faker.name.firstName()) \(faker.name.lastName())"
                     // Get random image from Lorem Picsum website
                     friend.profileImageString = "https://picsum.photos/50/?random=\(i)"
-                    if hasMessage {
-                        if let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedContext) as? Message  {
-                            message.text = faker.lorem.characters(amount: 50)
-                            message.date = faker.date.between(Date(timeIntervalSinceNow: -1000000), Date())
-                            message.friend = friend
-                        }
+                    if let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedContext) as? Message  {
+                        message.text = faker.lorem.characters(amount: 50)
+                        message.date = faker.date.between(Date(timeIntervalSinceNow: -1000000), Date())
+                        message.friend = friend
                     }
-                    hasMessage.toggle()
                 }
             }
             // save the array in core data
