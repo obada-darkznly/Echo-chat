@@ -121,4 +121,11 @@ class BaseViewController: UIViewController {
             }
         }
     }
+    
+     /// enable end editing gesture to close keyboard and end editing
+    var enableEndEditingGesture: Bool = true {
+        didSet {
+            view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        }
+    }
 }
