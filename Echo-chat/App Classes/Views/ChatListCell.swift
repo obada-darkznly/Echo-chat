@@ -15,6 +15,7 @@ class ChatListCell: UITableViewCell {
     // MARK: Outlets
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var bubbleImageView: UIImageView!
     @IBOutlet weak var containerViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
     
@@ -33,6 +34,12 @@ class ChatListCell: UITableViewCell {
         
         textView.font = AppFonts.normal
         textView.textColor = .white
+        
+        bubbleImageView.tintColor = AppColors.blue
+        bubbleImageView.contentMode = .scaleToFill
+        bubbleImageView.image = #imageLiteral(resourceName: "friendBubble")
+            .withAlignmentRectInsets(UIEdgeInsets(top: 8, left: 26, bottom: 8, right: 8))
+            .withRenderingMode(.alwaysTemplate)
     }
     
     // MARK: Cell's population
@@ -51,6 +58,11 @@ class ChatListCell: UITableViewCell {
         if isMe {
             containerViewLeadingConstraint.constant = screenWidth - containerViewWidthConstraint.constant - 16
             containerView.backgroundColor = AppColors.ligtBlue
+            
+            bubbleImageView.tintColor = AppColors.ligtBlue
+            bubbleImageView.image = #imageLiteral(resourceName: "senderBubble")
+                .withAlignmentRectInsets(UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 26))
+                .withRenderingMode(.alwaysTemplate)
         }
         self.layoutIfNeeded()
     }

@@ -18,6 +18,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgk-Vp-1V4">
                         <rect key="frame" x="16" y="16" width="275" height="71"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="csm-xb-OAj">
+                                <rect key="frame" x="0.0" y="8" width="275" height="55"/>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Test" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAD-OU-GYI">
                                 <rect key="frame" x="4" y="4" width="267" height="63"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -31,8 +34,12 @@
                             <constraint firstAttribute="width" constant="275" id="4ee-ar-zzz"/>
                             <constraint firstAttribute="bottom" secondItem="eAD-OU-GYI" secondAttribute="bottom" constant="4" id="FPT-m1-37s"/>
                             <constraint firstAttribute="trailing" secondItem="eAD-OU-GYI" secondAttribute="trailing" constant="4" id="GTe-1E-Iq4"/>
+                            <constraint firstItem="csm-xb-OAj" firstAttribute="leading" secondItem="fgk-Vp-1V4" secondAttribute="leading" id="SYK-gV-f1b"/>
+                            <constraint firstAttribute="trailing" secondItem="csm-xb-OAj" secondAttribute="trailing" id="VBj-9e-1cw"/>
                             <constraint firstItem="eAD-OU-GYI" firstAttribute="top" secondItem="fgk-Vp-1V4" secondAttribute="top" constant="4" id="Vcd-n3-1Qt"/>
                             <constraint firstItem="eAD-OU-GYI" firstAttribute="leading" secondItem="fgk-Vp-1V4" secondAttribute="leading" constant="4" id="WTJ-PD-9sw"/>
+                            <constraint firstItem="csm-xb-OAj" firstAttribute="top" secondItem="fgk-Vp-1V4" secondAttribute="top" constant="8" id="rU6-BE-ANx"/>
+                            <constraint firstAttribute="bottom" secondItem="csm-xb-OAj" secondAttribute="bottom" constant="8" id="tAW-CQ-H9v"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -44,6 +51,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="bubbleImageView" destination="csm-xb-OAj" id="IzJ-MY-beL"/>
                 <outlet property="containerView" destination="fgk-Vp-1V4" id="3fQ-SP-kSB"/>
                 <outlet property="containerViewLeadingConstraint" destination="R7B-Pm-Cn4" id="mUv-vI-BpJ"/>
                 <outlet property="containerViewWidthConstraint" destination="4ee-ar-zzz" id="g1r-AL-pTg"/>
