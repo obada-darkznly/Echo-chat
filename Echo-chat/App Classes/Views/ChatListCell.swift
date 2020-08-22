@@ -30,6 +30,6 @@ class ChatListCell: UITableViewCell {
     
     // MARK: Cell's population
     func populate(withMessageText text: String) {
-        
+        textView.text = text
     }
 }
