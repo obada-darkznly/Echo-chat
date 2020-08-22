@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9D175E8EA5F20B282F06A64C /* Pods_Echo_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 561ED4C9F256DE2801AC73E7 /* Pods_Echo_chat.framework */; };
 		AF5B836C24F15EBC009040F8 /* Message+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B836A24F15EBC009040F8 /* Message+CoreDataProperties.swift */; };
+		AF5B836E24F1A10A009040F8 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5B836D24F1A10A009040F8 /* UIView.swift */; };
 		AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0DE24EE592000E0F203 /* AppDelegate.swift */; };
 		AF75D0E124EE592000E0F203 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0E024EE592000E0F203 /* SceneDelegate.swift */; };
 		AF75D0E624EE592000E0F203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0E424EE592000E0F203 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 		5F789101267E03FC2726915F /* Pods-Echo-chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Echo-chat.debug.xcconfig"; path = "Target Support Files/Pods-Echo-chat/Pods-Echo-chat.debug.xcconfig"; sourceTree = "<group>"; };
 		76D655E839B21E9E9FF5FAB5 /* Pods-Echo-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Echo-chat.release.xcconfig"; path = "Target Support Files/Pods-Echo-chat/Pods-Echo-chat.release.xcconfig"; sourceTree = "<group>"; };
 		AF5B836A24F15EBC009040F8 /* Message+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Message+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AF5B836D24F1A10A009040F8 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AF75D0DB24EE592000E0F203 /* Echo-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Echo-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF75D0DE24EE592000E0F203 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF75D0E024EE592000E0F203 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				AFDE634724F1475200ED1F1C /* String.swift */,
+				AF5B836D24F1A10A009040F8 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 			files = (
 				AF5B836C24F15EBC009040F8 /* Message+CoreDataProperties.swift in Sources */,
 				AF75D10024EE778400E0F203 /* MessagesListCell.swift in Sources */,
+				AF5B836E24F1A10A009040F8 /* UIView.swift in Sources */,
 				AF75D0E924EE592000E0F203 /* Echo_chat.xcdatamodeld in Sources */,
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
 				AF75D11124EEA0B800E0F203 /* BaseViewController.swift in Sources */,

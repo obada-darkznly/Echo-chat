@@ -27,6 +27,10 @@ class MessagesListCell: UITableViewCell {
     // MARK: Cell's customization
     func customizeView() {
         
+        self.tapAction {
+            
+        }
+        
         nameLabel.font = AppFonts.normal
         nameLabel.textColor = AppColors.black
         

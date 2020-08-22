@@ -34,7 +34,10 @@ class BaseViewController: UIViewController {
     
     func customizeView(_ title: String = "") {
         setNavBarTitle(title: title, color: .white)
+        
         self.view.backgroundColor = AppColors.white
+        
+        enableEndEditingGesture = true
     }
     
     // MARK: Navigation bar customization
@@ -129,3 +132,5 @@ class BaseViewController: UIViewController {
         }
     }
 }
+
+
