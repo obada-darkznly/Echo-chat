@@ -44,11 +44,17 @@ class ChatViewController: BaseViewController {
         super.customizeView(chatViewModel?.friend.name ?? "")
         
         tableView.delegate = self
-        
         let cellNib = UINib(nibName: "ChatListCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: chatViewModel!.chatListCellId)
         
         dataSource = ChatDataSource.init(withMessages: (chatViewModel?.messages)!)
+        
+        textView.backgroundColor = AppColors.grayLight.withAlphaComponent(0.8)
+        textView.layer.cornerRadius = 16
+        textView.font = AppFonts.normal
+        textView.textContainerInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 8)
+        
+        sendButton.setTitleColor(AppColors.purple, for: .normal)
     }
     
     // MARK: Actions
