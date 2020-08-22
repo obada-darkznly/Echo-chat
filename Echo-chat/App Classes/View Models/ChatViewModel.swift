@@ -10,12 +10,15 @@ import Foundation
 
 
 
-struct ChatViewModel {
+class ChatViewModel {
     
     // MARK: Properties
     var friend: Friend
+    var messages: [Message]?
     
     init(withFriend friend: Friend) {
         self.friend = friend
+        self.messages = friend.messages?.allObjects as? [Message]
+        self.messages?.sort(by: {$0.date?.compare($1.date!) == .orderedAscending})
     }
 }
