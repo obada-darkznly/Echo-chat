@@ -55,7 +55,7 @@ class DataStore: NSObject {
                     // Get random image from Lorem Picsum website
                     friend.profileImageString = "https://picsum.photos/50/?random=\(i)"
                     if let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedContext) as? Message  {
-                        message.text = faker.lorem.characters(amount: 50)
+                        message.text = faker.lorem.characters(amount: Int(arc4random_uniform(490)) + 11)
                         message.date = faker.date.between(Date(timeIntervalSinceNow: -1000000), Date())
                         message.friend = friend
                     }
