@@ -30,7 +30,7 @@ extension ChatDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "chatListCellId") as? ChatListCell else { return UITableViewCell() }
-        cell.populate(withMessageText: messages[indexPath.row].text ?? "")
+        cell.populate(withMessage: messages[indexPath.row])
         return cell
     }
 }

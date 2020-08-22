@@ -16,6 +16,7 @@ class ChatListCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var containerViewWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
     
     // MARK: Cell's life cycle
     override func awakeFromNib() {
@@ -29,16 +30,28 @@ class ChatListCell: UITableViewCell {
         
         containerView.backgroundColor = AppColors.blue
         containerView.layer.cornerRadius = 16
+        
         textView.font = AppFonts.normal
-        textView.textColor = AppColors.black
+        textView.textColor = .white
     }
     
     // MARK: Cell's population
-    func populate(withMessageText text: String) {
-        if text.calculatedFrame(ofFont: AppFonts.normal)?.width ?? 0 < 275 {
-            containerViewWidthConstraint.constant = text.calculatedFrame(ofFont: AppFonts.normal)?.width ?? 250
-            self.layoutIfNeeded()
+    func populate(withMessage message: Message) {
+        // Calcuate the height of the bubble based on the text
+        if message.text?.calculatedFrame(ofFont: AppFonts.normal)?.width ?? 0 < 275 {
+            containerViewWidthConstraint.constant = message.text?.calculatedFrame(ofFont: AppFonts.normal)?.width ?? 250
         }
-        textView.text = text
+        configureStyle(forSender: message.isMe)
+        textView.text = message.text
+    }
+    
+    /// Configures the allignment and background color of the message bubble
+    private func configureStyle(forSender isMe: Bool) {
+        let screenWidth = UIScreen.main.bounds.width
+        if isMe {
+            containerViewLeadingConstraint.constant = screenWidth - containerViewWidthConstraint.constant - 16
+            containerView.backgroundColor = AppColors.ligtBlue
+        }
+        self.layoutIfNeeded()
     }
 }

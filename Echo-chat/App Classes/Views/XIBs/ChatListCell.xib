@@ -16,10 +16,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgk-Vp-1V4">
-                        <rect key="frame" x="16" y="16" width="250" height="71"/>
+                        <rect key="frame" x="16" y="16" width="275" height="71"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" text="Test" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAD-OU-GYI">
-                                <rect key="frame" x="4" y="4" width="242" height="63"/>
+                                <rect key="frame" x="4" y="4" width="267" height="63"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -28,7 +28,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="250" id="4ee-ar-zzz"/>
+                            <constraint firstAttribute="width" constant="275" id="4ee-ar-zzz"/>
                             <constraint firstAttribute="bottom" secondItem="eAD-OU-GYI" secondAttribute="bottom" constant="4" id="FPT-m1-37s"/>
                             <constraint firstAttribute="trailing" secondItem="eAD-OU-GYI" secondAttribute="trailing" constant="4" id="GTe-1E-Iq4"/>
                             <constraint firstItem="eAD-OU-GYI" firstAttribute="top" secondItem="fgk-Vp-1V4" secondAttribute="top" constant="4" id="Vcd-n3-1Qt"/>
@@ -45,6 +45,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="containerView" destination="fgk-Vp-1V4" id="3fQ-SP-kSB"/>
+                <outlet property="containerViewLeadingConstraint" destination="R7B-Pm-Cn4" id="mUv-vI-BpJ"/>
                 <outlet property="containerViewWidthConstraint" destination="4ee-ar-zzz" id="g1r-AL-pTg"/>
                 <outlet property="textView" destination="eAD-OU-GYI" id="CJF-If-XDn"/>
             </connections>
