@@ -36,6 +36,7 @@ class ChatViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        handleKeyboardEvents(self.view)
     }
     
     // MARK: Views customization
