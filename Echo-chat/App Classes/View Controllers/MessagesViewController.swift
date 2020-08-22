@@ -31,8 +31,6 @@ class MessagesViewController: BaseViewController {
         messagesViewModel.refreshMessages { (success) in
             if success {
                 self.dataSource = MessagesDataSource(withMessages: self.messagesViewModel.messages)
-            } else {
-                print("Error in fetching messages from data source")
             }
         }
     }

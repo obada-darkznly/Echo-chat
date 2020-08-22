@@ -2,7 +2,7 @@
 //  Message+CoreDataProperties.swift
 //  Echo-chat
 //
-//  Created by Obada on 8/21/20.
+//  Created by Obada on 8/22/20.
 //  Copyright © 2020 Obada. All rights reserved.
 //
 //
@@ -17,8 +17,9 @@ extension Message {
         return NSFetchRequest<Message>(entityName: "Message")
     }
 
-    @NSManaged public var text: String?
     @NSManaged public var date: Date?
+    @NSManaged public var isMe: Bool
+    @NSManaged public var text: String?
     @NSManaged public var friend: Friend?
 
 }
