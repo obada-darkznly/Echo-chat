@@ -87,7 +87,7 @@
                     <connections>
                         <outlet property="sendButton" destination="idH-jN-6cG" id="Vmg-lu-VKM"/>
                         <outlet property="tableView" destination="mqI-Zv-ouO" id="8Jr-t5-iUU"/>
-                        <outlet property="textField" destination="LKd-84-rXv" id="qJH-DF-NdY"/>
+                        <outlet property="textView" destination="LKd-84-rXv" id="qJH-DF-NdY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j94-7f-h6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

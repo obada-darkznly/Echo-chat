@@ -14,7 +14,7 @@ class ChatViewController: BaseViewController {
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var textField: UITextView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var sendButton: UIButton!
     
     // MARK: Properties
