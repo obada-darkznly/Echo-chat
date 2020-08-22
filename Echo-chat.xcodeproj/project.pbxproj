@@ -28,6 +28,8 @@
 		AF75D12424EFBAF400E0F203 /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D12024EFBAF400E0F203 /* Friend+CoreDataProperties.swift */; };
 		AFD321B924F074D400B272B6 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD321B824F074D400B272B6 /* ChatViewModel.swift */; };
 		AFD321BB24F0751500B272B6 /* ChatViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD321BA24F0751500B272B6 /* ChatViewController .swift */; };
+		AFDE634224F13B6400ED1F1C /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE634124F13B6400ED1F1C /* ChatListCell.swift */; };
+		AFDE634424F13C6100ED1F1C /* ChatListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFDE634324F13C6100ED1F1C /* ChatListCell.xib */; };
 		AFE8655824EFDD3200EE97AD /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655724EFDD3200EE97AD /* DataStore.swift */; };
 		AFE8655B24EFFC8000EE97AD /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		AF89A83524F03E3A00B438F2 /* Echo-chat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Echo-chat-Bridging-Header.h"; sourceTree = "<group>"; };
 		AFD321B824F074D400B272B6 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		AFD321BA24F0751500B272B6 /* ChatViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController .swift"; sourceTree = "<group>"; };
+		AFDE634124F13B6400ED1F1C /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
+		AFDE634324F13C6100ED1F1C /* ChatListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListCell.xib; sourceTree = "<group>"; };
 		AFE8655724EFDD3200EE97AD /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,7 @@
 			children = (
 				AF75D0FE24EE776B00E0F203 /* XIBs */,
 				AF75D0FF24EE778400E0F203 /* MessagesListCell.swift */,
+				AFDE634124F13B6400ED1F1C /* ChatListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				AF75D10124EE98EC00E0F203 /* MessagesListCell.xib */,
+				AFDE634324F13C6100ED1F1C /* ChatListCell.xib */,
 			);
 			path = XIBs;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 			files = (
 				AF75D0EE24EE592100E0F203 /* LaunchScreen.storyboard in Resources */,
 				AF75D0EB24EE592100E0F203 /* Assets.xcassets in Resources */,
+				AFDE634424F13C6100ED1F1C /* ChatListCell.xib in Resources */,
 				AF75D0E624EE592000E0F203 /* Main.storyboard in Resources */,
 				AF75D10224EE98EC00E0F203 /* MessagesListCell.xib in Resources */,
 			);
@@ -367,6 +374,7 @@
 				AF75D0DF24EE592000E0F203 /* AppDelegate.swift in Sources */,
 				AF75D11124EEA0B800E0F203 /* BaseViewController.swift in Sources */,
 				AF75D10C24EE9E8900E0F203 /* AppFonts.swift in Sources */,
+				AFDE634224F13B6400ED1F1C /* ChatListCell.swift in Sources */,
 				AFD321B924F074D400B272B6 /* ChatViewModel.swift in Sources */,
 				AFE8655B24EFFC8000EE97AD /* MessagesDataSource.swift in Sources */,
 				AF75D10A24EE9C1F00E0F203 /* AppColors.swift in Sources */,

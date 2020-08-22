@@ -15,6 +15,7 @@ class ChatViewModel {
     // MARK: Properties
     var friend: Friend
     var messages: [Message]?
+    let chatListCellId = "chatListCellId"
     
     init(withFriend friend: Friend) {
         self.friend = friend
