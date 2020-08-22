@@ -60,11 +60,9 @@ class ChatViewController: BaseViewController {
 // MARK:- UITableView Delegate
 extension ChatViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // Estimate the height of the text
         if let messageText = chatViewModel?.messages?[indexPath.row].text {
-            let size = CGSize(width: view.frame.width, height: 1000)
-            let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-            let estimatedFrame = NSString(string: messageText).boundingRect(with: size, options: options, attributes: [NSAttributedString.Key.font : AppFonts.normal], context: nil)
-            return estimatedFrame.height + 32
+            return messageText.calculatedFrame(ofFont: AppFonts.normal)?.height ?? 0
         }
         return 100
     }
