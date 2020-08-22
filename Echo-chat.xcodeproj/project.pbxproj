@@ -30,6 +30,7 @@
 		AFD321BB24F0751500B272B6 /* ChatViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD321BA24F0751500B272B6 /* ChatViewController .swift */; };
 		AFDE634224F13B6400ED1F1C /* ChatListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE634124F13B6400ED1F1C /* ChatListCell.swift */; };
 		AFDE634424F13C6100ED1F1C /* ChatListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFDE634324F13C6100ED1F1C /* ChatListCell.xib */; };
+		AFDE634624F13DCA00ED1F1C /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE634524F13DCA00ED1F1C /* ChatDataSource.swift */; };
 		AFE8655824EFDD3200EE97AD /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655724EFDD3200EE97AD /* DataStore.swift */; };
 		AFE8655B24EFFC8000EE97AD /* MessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		AFD321BA24F0751500B272B6 /* ChatViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChatViewController .swift"; sourceTree = "<group>"; };
 		AFDE634124F13B6400ED1F1C /* ChatListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListCell.swift; sourceTree = "<group>"; };
 		AFDE634324F13C6100ED1F1C /* ChatListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListCell.xib; sourceTree = "<group>"; };
+		AFDE634524F13DCA00ED1F1C /* ChatDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
 		AFE8655724EFDD3200EE97AD /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -230,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				AFE8655A24EFFC8000EE97AD /* MessagesDataSource.swift */,
+				AFDE634524F13DCA00ED1F1C /* ChatDataSource.swift */,
 			);
 			path = TableViewDataSources;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				AF75D11424EEC4DA00E0F203 /* MessagesViewController.swift in Sources */,
 				AF75D10524EE9B0D00E0F203 /* MessagesViewModel.swift in Sources */,
 				AF75D0E124EE592000E0F203 /* SceneDelegate.swift in Sources */,
+				AFDE634624F13DCA00ED1F1C /* ChatDataSource.swift in Sources */,
 				AF75D12124EFBAF400E0F203 /* Message+CoreDataClass.swift in Sources */,
 				AF75D12324EFBAF400E0F203 /* Friend+CoreDataClass.swift in Sources */,
 				AF75D10E24EE9EF300E0F203 /* Constants.swift in Sources */,
