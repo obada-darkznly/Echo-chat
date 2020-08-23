@@ -108,4 +108,21 @@ class DataStore: NSObject {
         }
         completion(nil)
     }
+    
+    func createMessage(withText text: String, friend: Friend, data: Date, andIsMe isMe: Bool = true, completion: @escaping(_ success: Bool) -> Void) {
+        if let managedContext = delegate?.persistentContainer.viewContext {
+            guard let message = NSEntityDescription.insertNewObject(forEntityName: "Message", into: managedContext) as? Message else { return }
+            message.friend = friend
+            message.text = text
+            message.isMe = isMe
+            
+            do {
+               try managedContext.save()
+                completion(true)
+            } catch let error {
+                completion(false)
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

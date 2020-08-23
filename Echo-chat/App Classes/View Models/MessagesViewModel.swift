@@ -22,17 +22,18 @@ class MessagesViewModel {
     
     /// Fetches the messages from the data store
     func refreshMessages(completion: @escaping(_ success: Bool) -> Void) {
-        if messages.count == 200 {
+        if messages.isEmpty {
+            DataStore.shared.loadMessages { (messages) in
+                if let messages = messages {
+                    self.messages += messages
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            }
+        } else {
             completion(false)
             return
-        }
-        DataStore.shared.loadMessages { (messages) in
-            if let messages = messages {
-                self.messages += messages
-                completion(true)
-            } else {
-                completion(false)
-            }
         }
     }
 }
