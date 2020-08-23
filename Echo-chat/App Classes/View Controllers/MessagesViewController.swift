@@ -60,6 +60,7 @@ extension MessagesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         messagesViewModel.selectedFriend = messagesViewModel.messages[indexPath.row].friend
         performSegue(withIdentifier: messagesViewModel.friendChatSegue, sender: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
