@@ -43,7 +43,6 @@ class ChatViewController: BaseViewController {
     override func customizeView(_ title: String = "") {
         super.customizeView(chatViewModel?.friend.name ?? "")
         
-        tableView.delegate = self
         let cellNib = UINib(nibName: "ChatListCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: chatViewModel!.chatListCellId)
         
@@ -64,18 +63,3 @@ class ChatViewController: BaseViewController {
     
 }
 
-// MARK:- UITableView Delegate
-extension ChatViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        // Estimate the height of the text
-        if let messageText = chatViewModel?.messages?[indexPath.row].text {
-            let estimatedHeight = messageText.calculatedFrame(ofFont: AppFonts.normal)?.height ?? 0
-            if estimatedHeight < 46 { // If the text height is smaller than 56(the minimum) return 40
-                return 46
-            } else { // return the estimated height
-                return estimatedHeight
-            }
-        }
-        return 100
-    }
-}
