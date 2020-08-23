@@ -30,6 +30,7 @@ class ChatListCell: UITableViewCell {
         
         containerView.backgroundColor = AppColors.blue
         containerView.layer.cornerRadius = 16
+        containerView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         textView.font = AppFonts.normal
         textView.textColor = .white
@@ -51,6 +52,7 @@ class ChatListCell: UITableViewCell {
         if isMe {
             containerViewLeadingConstraint.constant = screenWidth - containerViewWidthConstraint.constant - 16
             containerView.backgroundColor = AppColors.ligtBlue
+            containerView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMinYCorner]
         }
         self.layoutIfNeeded()
     }
