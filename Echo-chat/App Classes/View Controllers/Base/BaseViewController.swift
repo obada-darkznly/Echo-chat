@@ -28,6 +28,8 @@ class BaseViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setNavBarTheme()
+        
+        setNeedsStatusBarAppearanceUpdate()
     }
     
     // MARK:- Controller's customization
