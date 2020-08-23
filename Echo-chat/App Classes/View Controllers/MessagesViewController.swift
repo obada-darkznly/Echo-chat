@@ -58,7 +58,7 @@ extension MessagesViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        messagesViewModel.selectedFriend = messagesViewModel.messages[indexPath.row].friend ?? Friend()
+        messagesViewModel.selectedFriend = messagesViewModel.messages[indexPath.row].friend
         performSegue(withIdentifier: messagesViewModel.friendChatSegue, sender: nil)
     }
 }
@@ -66,8 +66,8 @@ extension MessagesViewController: UITableViewDelegate {
 // MARK:- Navigation and segue
 extension MessagesViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let chatVC = segue.destination as? ChatViewController {
-            chatVC.chatViewModel = ChatViewModel(withFriend: messagesViewModel.selectedFriend)
+        if let chatVC = segue.destination as? ChatViewController, let friend = messagesViewModel.selectedFriend {
+            chatVC.chatViewModel = ChatViewModel(withFriend: friend)
         }
     }
 }

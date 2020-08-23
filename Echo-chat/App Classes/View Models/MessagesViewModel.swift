@@ -15,7 +15,7 @@ class MessagesViewModel {
     let firendsCellId = "messagesListCell"
     let friendChatSegue = "friendChatSegue"
     var messages: [Message] = []
-    var selectedFriend = Friend()
+    var selectedFriend: Friend?
     
     
     // MARK: Methods

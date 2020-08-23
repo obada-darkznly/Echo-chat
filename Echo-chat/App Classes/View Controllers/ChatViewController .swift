@@ -69,7 +69,12 @@ extension ChatViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // Estimate the height of the text
         if let messageText = chatViewModel?.messages?[indexPath.row].text {
-            return messageText.calculatedFrame(ofFont: AppFonts.normal)?.height ?? 0
+            let estimatedHeight = messageText.calculatedFrame(ofFont: AppFonts.normal)?.height ?? 0
+            if estimatedHeight < 46 { // If the text height is smaller than 56(the minimum) return 40
+                return 46
+            } else { // return the estimated height
+                return estimatedHeight
+            }
         }
         return 100
     }
