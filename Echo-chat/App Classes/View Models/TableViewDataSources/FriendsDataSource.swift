@@ -9,27 +9,27 @@
 import UIKit
 
 
-class MessagesDataSource: NSObject {
-    let messages: [Message]
+class FriendsDataSource: NSObject {
+    let friends: [Friend]
     
-    init(withMessages messages: [Message]) {
-        self.messages = messages
+    init(withFriends friends: [Friend]) {
+        self.friends = friends
     }
 }
 
-extension MessagesDataSource: UITableViewDataSource {
+extension FriendsDataSource: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messages.count
+        return friends.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "messagesListCell") as? MessagesListCell else { return UITableViewCell() }
-        cell.populate(withMessage: messages[indexPath.row])
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendsListCell") as? FriendsListCell else { return UITableViewCell() }
+        cell.populate(withFriend: friends[indexPath.row])
         return cell
     }
 }

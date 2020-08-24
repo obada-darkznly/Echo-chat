@@ -10,7 +10,7 @@ import UIKit
 import PINRemoteImage
 
 
-class MessagesListCell: UITableViewCell {
+class FriendsListCell: UITableViewCell {
     
     // MARK: Outlets
     @IBOutlet weak var nameLabel: UILabel!
@@ -45,17 +45,17 @@ class MessagesListCell: UITableViewCell {
     }
     
     // MARK: Cell's population
-    func populate(withMessage message: Message) {
-        nameLabel.text = message.friend?.name
-        messageLabel.text = message.text ?? ""
+    func populate(withFriend friend: Friend) {
+        nameLabel.text = "\(friend.firstName) \(friend.lastName)"
+        messageLabel.text = friend.messages?.last?.text ?? ""
         
         let formatter = DateFormatter()
         formatter.dateStyle = .none
         formatter.timeStyle = .short
-        if let date = message.date {
+        if let date = friend.messages?.last?.timeStamp {
             dateLabel.text = formatter.string(from: date)
         }
-        if let imageString = message.friend?.profileImageString {
+        if let imageString = friend.profileImageString {
             let imageUrl = URL(string: imageString)!
             profileImageView.pin_setImage(from: imageUrl)
         }

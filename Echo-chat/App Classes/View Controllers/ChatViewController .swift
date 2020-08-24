@@ -41,7 +41,7 @@ class ChatViewController: BaseViewController {
     
     // MARK: Views customization
     override func customizeView(_ title: String = "") {
-        super.customizeView(chatViewModel?.friend.name ?? "")
+        super.customizeView(chatViewModel?.friend.firstName ?? "")
         
         let cellNib = UINib(nibName: "ChatListCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: chatViewModel!.chatListCellId)

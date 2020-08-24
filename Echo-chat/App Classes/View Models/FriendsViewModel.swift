@@ -9,31 +9,30 @@
 import Foundation
 
 
-class MessagesViewModel {
+class FriendsViewModel {
     
     // MARK: Properties
     let firendsCellId = "messagesListCell"
     let friendChatSegue = "friendChatSegue"
-    var messages: [Message] = []
+    var friends: [Friend] = []
     var selectedFriend: Friend?
     
     
     // MARK: Methods
     
     /// Fetches the messages from the data store
-    func refreshMessages(completion: @escaping(_ success: Bool) -> Void) {
-        if messages.isEmpty {
-            DataStore.shared.loadMessages { (messages) in
-                if let messages = messages {
-                    self.messages += messages
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            }
+    func refreshFriends(completion: @escaping(_ success: Bool) -> Void) {
+        if friends.isEmpty {
+            DataManager.shared.generateData()
+            self.friends = DataStore.shared.friends ?? []
+            completion(true)
         } else {
             completion(false)
             return
         }
+    }
+    
+    func sortFriends() {
+        friends.sort(by: {$0.messages?.last?.timeStamp?.compare(($1.messages?.last?.timeStamp!)!) == .orderedDescending})
     }
 }

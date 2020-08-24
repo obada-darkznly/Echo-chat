@@ -8,13 +8,13 @@
 
 import UIKit
 
-class MessagesViewController: BaseViewController {
+class FriendsViewController: BaseViewController {
     
     // MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Properties
-    var messagesViewModel = MessagesViewModel()
+    var friendsViewModel = FriendsViewModel()
     
     var dataSource: UITableViewDataSource? {
         didSet {
@@ -28,15 +28,18 @@ class MessagesViewController: BaseViewController {
         super.viewDidLoad()
 
         // Refresh the messages
-        messagesViewModel.refreshMessages { (success) in
+        friendsViewModel.refreshFriends { (success) in
             if success {
-                self.dataSource = MessagesDataSource(withMessages: self.messagesViewModel.messages)
+                self.dataSource = FriendsDataSource(withFriends: self.friendsViewModel.friends)
             }
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        friendsViewModel.sortFriends()
+        tableView.reloadData()
     }
     
     // MARK: Controller's customization
@@ -45,29 +48,29 @@ class MessagesViewController: BaseViewController {
         tableView.delegate = self
         
         // Registering the cell with the table view
-        let cellNib = UINib(nibName: "MessagesListCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: messagesViewModel.firendsCellId)
+        let cellNib = UINib(nibName: "FriendsListCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: friendsViewModel.firendsCellId)
         
     }
 }
 
 // MARK:- Table view delegate
-extension MessagesViewController: UITableViewDelegate {
+extension FriendsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        messagesViewModel.selectedFriend = messagesViewModel.messages[indexPath.row].friend
-        performSegue(withIdentifier: messagesViewModel.friendChatSegue, sender: nil)
+        friendsViewModel.selectedFriend =   friendsViewModel.friends[indexPath.row]
+        performSegue(withIdentifier: friendsViewModel.friendChatSegue, sender: nil)
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
 // MARK:- Navigation and segue
-extension MessagesViewController {
+extension FriendsViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let chatVC = segue.destination as? ChatViewController, let friend = messagesViewModel.selectedFriend {
+        if let chatVC = segue.destination as? ChatViewController, let friend = friendsViewModel.selectedFriend {
             chatVC.chatViewModel = ChatViewModel(withFriend: friend)
         }
     }

@@ -42,7 +42,7 @@ class ChatListCell: UITableViewCell {
         if message.text?.calculatedFrame(ofFont: AppFonts.normal)?.width ?? 0 < 275 {
             containerViewWidthConstraint.constant = message.text?.calculatedFrame(ofFont: AppFonts.normal)?.width ?? 250
         }
-        configureStyle(forSender: message.isMe)
+        configureStyle(forSender: message.isMe ?? false)
         textView.text = message.text
     }
     

@@ -21,15 +21,15 @@ class ChatViewModel {
     
     init(withFriend friend: Friend) {
         self.friend = friend
-        self.messages = friend.messages?.allObjects as? [Message]
-        self.messages?.sort(by: {$0.date?.compare($1.date!) == .orderedAscending})
+        self.messages = friend.messages
+        self.messages?.sort(by: {$0.timeStamp?.compare($1.timeStamp!) == .orderedAscending})
     }
     
     /// Sends a message to the selected friend
     func sendMessage(withText text: String) {
-        DataStore.shared.createMessage(withText: text, friend: friend) { (message) in
-            if let message = message {
-                self.echoMessage(ofText: text)
+        let message = Message(withText: text, timeStamp: Date(), andisMe: true)
+        DataManager.shared.save(message, forFriend: friend) { (success) in
+            if success {
                 self.messages?.append(message)
                 self.messageSentPublisher.send(true)
             } else {
@@ -41,8 +41,9 @@ class ChatViewModel {
     /// Echos the message back at the user after 0.5 seconds
     private func echoMessage(ofText text: String) {
         DispatchQueue.global().asyncAfter(deadline: .now() + 0.5) {
-            DataStore.shared.createMessage(withText: text, friend: self.friend, andIsMe: false) { (message) in
-                if let message = message {
+            let message = Message(withText: text, timeStamp: Date(), andisMe: false)
+            DataManager.shared.save(message, forFriend: self.friend) { (success) in
+                if success {
                     self.messages?.append(message)
                     self.messageSentPublisher.send(true)
                 } else {
