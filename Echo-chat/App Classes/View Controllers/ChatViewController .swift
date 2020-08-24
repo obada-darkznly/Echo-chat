@@ -57,10 +57,11 @@ class ChatViewController: BaseViewController {
         
         dataSource = ChatDataSource.init(withMessages: chatViewModel?.friend.messages ?? [])
         
-        textView.backgroundColor = AppColors.grayLight.withAlphaComponent(0.8)
+        textView.backgroundColor = AppColors.grayLight.withAlphaComponent(0.3)
         textView.layer.cornerRadius = 16
         textView.font = AppFonts.normal
         textView.textContainerInset = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 8)
+        textView.textColor = AppColors.grayDark
         
         sendButton.setTitleColor(AppColors.purple, for: .normal)
     }
@@ -68,6 +69,7 @@ class ChatViewController: BaseViewController {
     // MARK: Actions
     @IBAction func sendPressed(_ sneder: UIButton) {
         chatViewModel?.sendMessage(withText: textView.text)
+        textView.text = ""
     }
     
 }

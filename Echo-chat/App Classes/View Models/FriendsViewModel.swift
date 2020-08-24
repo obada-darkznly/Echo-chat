@@ -14,7 +14,7 @@ class FriendsViewModel {
     // MARK: Properties
     let firendsCellId = "friendsListCell"
     let friendChatSegue = "friendChatSegue"
-    var friends: [Friend] = []
+    var friends: [Friend] = DataStore.shared.friends ?? []
     var selectedFriend: Friend?
     
     
@@ -22,12 +22,13 @@ class FriendsViewModel {
     
     /// Fetches the messages from the data store
     func refreshFriends(completion: @escaping(_ success: Bool) -> Void) {
-        if friends.isEmpty {
+        if DataStore.shared.friends?.isEmpty ?? true {
             DataManager.shared.generateData()
             self.friends = DataStore.shared.friends ?? []
             completion(true)
         } else {
-            completion(false)
+            self.friends = DataStore.shared.friends ?? []
+            completion(true)
             return
         }
     }

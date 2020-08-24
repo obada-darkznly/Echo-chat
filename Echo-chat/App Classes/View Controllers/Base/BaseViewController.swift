@@ -55,7 +55,7 @@ class BaseViewController: UIViewController {
         let titleLabel = UILabel(frame: titleLabelFrame)
         titleLabel.text = title
         titleLabel.textAlignment = .center
-        titleLabel.font = AppFonts.xBig
+        titleLabel.font = AppFonts.big
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.textColor = color
         titleView.addSubview(titleLabel)
