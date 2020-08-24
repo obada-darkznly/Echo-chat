@@ -40,7 +40,9 @@ class ChatViewController: BaseViewController {
         handleKeyboardEvents(self.view)
         messageSentSubscriber = chatViewModel?.messageSentPublisher.sink(receiveValue: { (messageSent) in
             if messageSent {
-                self.dataSource = ChatDataSource(withMessages: self.chatViewModel?.friend.messages ?? [])
+                DispatchQueue.main.async {
+                    self.dataSource = ChatDataSource(withMessages: self.chatViewModel?.friend.messages ?? [])
+                }
             }
         })
     }

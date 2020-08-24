@@ -22,7 +22,6 @@ class DataManager: NSObject {
     private let faker = Faker()
     
     func generateData() {
-        clearData()
         var friends = [Friend]()
         var currentMessages: [Message]? = []
         for i in 0...199 {
