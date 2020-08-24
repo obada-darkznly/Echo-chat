@@ -28,7 +28,7 @@ extension FriendsDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendsListCell") as? FriendsListCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendsListCell", for: indexPath) as? FriendsListCell else { return UITableViewCell() }
         cell.populate(withFriend: friends[indexPath.row])
         return cell
     }

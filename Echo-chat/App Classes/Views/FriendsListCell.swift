@@ -46,7 +46,7 @@ class FriendsListCell: UITableViewCell {
     
     // MARK: Cell's population
     func populate(withFriend friend: Friend) {
-        nameLabel.text = "\(friend.firstName) \(friend.lastName)"
+        nameLabel.text = friend.firstName! + " " + friend.lastName!
         messageLabel.text = friend.messages?.last?.text ?? ""
         
         let formatter = DateFormatter()

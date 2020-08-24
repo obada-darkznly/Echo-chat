@@ -46,7 +46,7 @@ class ChatViewController: BaseViewController {
         let cellNib = UINib(nibName: "ChatListCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: chatViewModel!.chatListCellId)
         
-        dataSource = ChatDataSource.init(withMessages: (chatViewModel?.messages)!)
+        dataSource = ChatDataSource.init(withMessages: chatViewModel?.messages ?? [])
         
         textView.backgroundColor = AppColors.grayLight.withAlphaComponent(0.8)
         textView.layer.cornerRadius = 16

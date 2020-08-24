@@ -12,7 +12,7 @@ import Foundation
 class FriendsViewModel {
     
     // MARK: Properties
-    let firendsCellId = "messagesListCell"
+    let firendsCellId = "friendsListCell"
     let friendChatSegue = "friendChatSegue"
     var friends: [Friend] = []
     var selectedFriend: Friend?
