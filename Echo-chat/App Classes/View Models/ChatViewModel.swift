@@ -15,14 +15,14 @@ class ChatViewModel {
     
     // MARK: Properties
     var friend: Friend
-    var messages: [Message]?
+    var messages = [Message]()
     let chatListCellId: String = "chatListCellId"
     var messageSentPublisher = CurrentValueSubject<Bool, Never>(false)
     
     init(withFriend friend: Friend) {
         self.friend = friend
-        self.messages = friend.messages
-        self.messages?.sort(by: {$0.timeStamp?.compare($1.timeStamp!) == .orderedAscending})
+        self.messages = friend.messages ?? []
+        self.messages.sort(by: {$0.timeStamp?.compare($1.timeStamp!) == .orderedAscending})
     }
     
     /// Sends a message to the selected friend
@@ -30,8 +30,9 @@ class ChatViewModel {
         let message = Message(withText: text, timeStamp: Date(), andisMe: true)
         DataManager.shared.save(message, forFriend: friend) { (success) in
             if success {
-                self.messages?.append(message)
+                self.messages.append(message)
                 self.messageSentPublisher.send(true)
+                self.echoMessage(ofText: text)
             } else {
                 self.messageSentPublisher.send(false)
             }
@@ -44,7 +45,7 @@ class ChatViewModel {
             let message = Message(withText: text, timeStamp: Date(), andisMe: false)
             DataManager.shared.save(message, forFriend: self.friend) { (success) in
                 if success {
-                    self.messages?.append(message)
+                    self.messages.append(message)
                     self.messageSentPublisher.send(true)
                 } else {
                     self.messageSentPublisher.send(false)

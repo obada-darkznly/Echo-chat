@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Combine
 
 
 class ChatViewController: BaseViewController {
@@ -25,6 +25,7 @@ class ChatViewController: BaseViewController {
             self.tableView.reloadData()
         }
     }
+    var messageSentSubscriber: AnyCancellable?
     
     // MARK: Controller's life cycle
     
@@ -37,6 +38,11 @@ class ChatViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         handleKeyboardEvents(self.view)
+        messageSentSubscriber = chatViewModel?.messageSentPublisher.sink(receiveValue: { (messageSent) in
+            if messageSent {
+                self.dataSource = ChatDataSource(withMessages: self.chatViewModel?.friend.messages ?? [])
+            }
+        })
     }
     
     // MARK: Views customization
@@ -45,8 +51,9 @@ class ChatViewController: BaseViewController {
         
         let cellNib = UINib(nibName: "ChatListCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: chatViewModel!.chatListCellId)
+        tableView.delegate = self
         
-        dataSource = ChatDataSource.init(withMessages: chatViewModel?.messages ?? [])
+        dataSource = ChatDataSource.init(withMessages: chatViewModel?.friend.messages ?? [])
         
         textView.backgroundColor = AppColors.grayLight.withAlphaComponent(0.8)
         textView.layer.cornerRadius = 16
@@ -58,8 +65,30 @@ class ChatViewController: BaseViewController {
     
     // MARK: Actions
     @IBAction func sendPressed(_ sneder: UIButton) {
-        
+        chatViewModel?.sendMessage(withText: textView.text)
     }
     
+}
+
+// MARK:- Table view delegate
+extension ChatViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
+        
+        let headerLabel = UILabel()
+        headerLabel.textAlignment = .center
+        headerLabel.font = AppFonts.small
+        headerLabel.textColor = AppColors.gray
+        if let date = chatViewModel?.friend.messages?.first?.timeStamp {
+            headerLabel.text =  formatter.string(from: date)
+        } else {
+            headerLabel.text = ""
+        }
+        return headerLabel
+    }
+
 }
 

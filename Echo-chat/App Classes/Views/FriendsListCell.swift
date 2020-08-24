@@ -54,6 +54,8 @@ class FriendsListCell: UITableViewCell {
         formatter.timeStyle = .short
         if let date = friend.messages?.last?.timeStamp {
             dateLabel.text = formatter.string(from: date)
+        } else {
+            dateLabel.text = ""
         }
         if let imageString = friend.profileImageString {
             let imageUrl = URL(string: imageString)!

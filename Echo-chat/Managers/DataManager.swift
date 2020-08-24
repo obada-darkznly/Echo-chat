@@ -22,18 +22,14 @@ class DataManager: NSObject {
     private let faker = Faker()
     
     func generateData() {
+        clearData()
         var friends = [Friend]()
-        var hasMessages: Bool = true
         var currentMessages: [Message]? = []
         for i in 0...199 {
-            if hasMessages {
-                currentMessages?.append(Message(withText: faker.lorem.paragraph(sentencesAmount: Int(arc4random_uniform(50)) + 2), timeStamp: faker.date.between(Date(timeIntervalSinceNow: -10000000), Date()), andisMe: false))
-            } else {
-                currentMessages = nil
-            }
-            hasMessages.toggle()
+            currentMessages?.append(Message(withText: faker.lorem.paragraph(sentencesAmount: Int(arc4random_uniform(10)) + 2), timeStamp: faker.date.between(Date(timeIntervalSinceNow: -10000000), Date()), andisMe: false)) 
             let friend = Friend(withFirstName: faker.name.firstName(), lastName: faker.name.lastName(), messages: currentMessages, andProfileImageString: "https://picsum.photos/50/?random=\(i)")
             friends.append(friend)
+            currentMessages? = []
         }
         friends.sort(by: {$0.messages?.last?.timeStamp?.compare(($1.messages?.last?.timeStamp!)!) == .orderedDescending})
         DataStore.shared.friends = friends
